@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio — front-end ontwikkelaar met focus op moderne, toegankelijke interfaces."
+    />
+    <title>Portfolio — Aleksander Zdrojewski</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <div class="site-header__inner glass-nav">
+        <a class="logo" href="#hero" aria-label="Home">AZ</a>
+        <button
+          type="button"
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Menu openen"
+        >
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="Hoofdnavigatie">
+          <ul class="site-nav__list">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="nav-backdrop" hidden></div>
+
+    <main id="main">
+      <section class="hero" id="hero" aria-labelledby="hero-title">
+        <div class="hero__bg" aria-hidden="true"></div>
+        <div class="hero__content">
+          <h1 class="hero__title reveal" data-reveal id="hero-title">
+            I build modern,<br />
+            <span class="hero__accent">sleek websites.</span>
+          </h1>
+          <p class="hero__lead reveal" data-reveal>
+            Minimalistic designs, from start to finish, tailored to your needs.
+          </p>
+          <div class="hero__actions reveal" data-reveal>
+            <a class="btn btn--primary glass-btn" href="#projects">View work</a>
+            <a class="btn btn--ghost" href="#contact">Let's Talk</a>
+          </div>
+        </div>
+        <div class="hero__meta reveal" data-reveal>
+          <span class="hero__dot" aria-hidden="true"></span>
+          <span>Available for projects - 2026</span>
+        </div>
+      </section>
+
+      <section class="section about" id="about" aria-labelledby="about-title">
+        <div class="section__inner">
+          <header class="section__head reveal" data-reveal>
+            <p class="section__eyebrow">About</p>
+            <h2 class="section__title" id="about-title">Quick intro</h2>
+            <p class="section__subtitle">
+              I’m a front-end developer focused on building clean, high-performing interfaces.
+I care about structure, usability, and creating digital experiences that feel effortless and refined.
+            </p>
+          </header>
+          <div class="about__grid">
+            <article class="card glass-card reveal" data-reveal>
+              <h3 class="card__title">Profile</h3>
+              <p class="card__text">
+                I design and develop intuitive interfaces with a strong focus on clarity, consistency, and interaction.
+My goal is to make complex ideas feel simple through thoughtful design and solid front-end execution.
+              </p>
+            </article>
+            <article class="card glass-card reveal" data-reveal>
+              <h3 class="card__title">Approach</h3>
+              <p class="card__text">
+                I start with structure and content, then refine the visual layer.
+Performance, semantic HTML, and scalable CSS are part of every decision I make.
+              </p>
+            </article>
+            <article class="card glass-card reveal" data-reveal>
+              <h3 class="card__title">Now</h3>
+              <p class="card__text">
+                Currently in Semester 3 Front-End Development, building my portfolio and my own business.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section projects" id="projects" aria-labelledby="projects-title">
+        <div class="section__inner">
+          <header class="section__head reveal" data-reveal>
+            <p class="section__eyebrow">Selected work</p>
+            <h2 class="section__title" id="projects-title">Projects</h2>
+          </header>
+          <ul class="projects__list">
+            <li class="reveal" data-reveal>
+              <article class="project-card glass-card">
+                <div class="project-card__media" aria-hidden="true">
+                  <span class="project-card__gradient project-card__gradient--a"></span>
+                </div>
+                <div class="project-card__body">
+                  <h3 class="project-card__title">Webloom Media</h3>
+                  <p class="project-card__desc">
+                    Homepage of my branding and website agency.
+                  </p>
+                  <ul class="project-card__tags" aria-label="Technologieën">
+                    <li>Framer</li>
+                    <li>Figma</li>
+                  </ul>
+                  <a class="project-card__link" href="https://conclusive-acknowledgment-207393.framer.app/" target="_blank" rel="noopener noreferrer"
+                    >View Case</a
+                  >
+                </div>
+              </article>
+            </li>
+            <li class="reveal" data-reveal>
+              <article class="project-card glass-card">
+                <div class="project-card__media" aria-hidden="true">
+                  <span class="project-card__gradient project-card__gradient--b"></span>
+                </div>
+                <div class="project-card__body">
+                  <h3 class="project-card__title">Unico Food</h3>
+                  <p class="project-card__desc">
+                    Webshop for a food retailer in Roosendaal.
+                  </p>
+                  <ul class="project-card__tags" aria-label="Technologieën">
+                    <li>Wordpress</li>
+                    <li>Figma</li>
+                    <li>CSS</li>
+                    <li>JS</li>
+                  </ul>
+                  <a class="project-card__link" href="https://unico-food.nl/" target="_blank" rel="noopener noreferrer"
+                    >View Case</a
+                  >
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section skills" id="skills" aria-labelledby="skills-title">
+        <div class="section__inner">
+          <header class="section__head reveal" data-reveal>
+            <p class="section__eyebrow">Toolkit</p>
+            <h2 class="section__title" id="skills-title">Skills</h2>
+           
+          </header>
+          <ul class="skills__grid">
+            <li class="skill-pill glass-pill reveal" data-reveal>
+              <span class="skill-pill__name">Framer</span>
+              <span class="skill-pill__meter" role="presentation"
+                ><span class="skill-pill__fill" style="--level: 92%"></span
+              ></span>
+            </li>
+            <li class="skill-pill glass-pill reveal" data-reveal>
+              <span class="skill-pill__name">Figma</span>
+              <span class="skill-pill__meter" role="presentation"
+                ><span class="skill-pill__fill" style="--level: 90%"></span
+              ></span>
+            </li>
+            <li class="skill-pill glass-pill reveal" data-reveal>
+              <span class="skill-pill__name">Design Systems</span>
+              <span class="skill-pill__meter" role="presentation"
+                ><span class="skill-pill__fill" style="--level: 78%"></span
+              ></span>
+            </li>
+            <li class="skill-pill glass-pill reveal" data-reveal>
+              <span class="skill-pill__name">Accessibility</span>
+              <span class="skill-pill__meter" role="presentation"
+                ><span class="skill-pill__fill" style="--level: 85%"></span
+              ></span>
+            </li>
+            <li class="skill-pill glass-pill reveal" data-reveal>
+              <span class="skill-pill__name">SEO Optimization</span>
+              <span class="skill-pill__meter" role="presentation"
+                ><span class="skill-pill__fill" style="--level: 72%"></span
+              ></span>
+            </li>
+            <li class="skill-pill glass-pill reveal" data-reveal>
+              <span class="skill-pill__name">HTML, CSS, JS</span>
+              <span class="skill-pill__meter" role="presentation"
+                ><span class="skill-pill__fill" style="--level: 80%"></span
+              ></span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact" aria-labelledby="contact-title">
+        <div class="section__inner section__inner--narrow">
+          <header class="section__head reveal" data-reveal>
+            <p class="section__eyebrow">Contact</p>
+            <h2 class="section__title" id="contact-title">Let's work together</h2>
+           
+          </header>
+          <div class="contact__panel glass-card reveal" data-reveal>
+            <p class="contact__email">
+              <a href="mailto:aleksdotz@gmail.com">aleksdotz@gmail.com</a>
+            </p>
+            <div class="contact__actions">
+              <a class="btn btn--primary glass-btn" href="mailto:aleksdotz@gmail.com"
+                >Send Email</a
+              >
+              <a
+                class="btn btn--ghost"
+                href="https://www.linkedin.com/in/aleks-zdrojewski-8967b9397/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >LinkedIn</a
+              >
+              <a
+                class="btn btn--ghost"
+                href="https://github.com/aleksdotz/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >GitHub</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p class="site-footer__brand">
+          <span class="logo logo--footer">AZ</span>
+          <span>Aleksander Zdrojewski · Portfolio</span>
+        </p>
+        <a class="site-footer__top glass-btn glass-btn--icon" href="#top" aria-label="Terug naar boven"
+          >↑</a
+        >
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
