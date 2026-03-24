@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Project detailpagina van Momentum app met twee carousels."
+    />
+    <title>Project — Momentum App</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .project-section {
+        min-height: 100vh;
+        display: grid;
+        align-items: center;
+        padding: 2rem 0;
+      }
+
+      .project-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        gap: 1rem;
+        align-items: start;
+      }
+
+      .project-layout__left,
+      .project-layout__right {
+        display: grid;
+        gap: 1rem;
+        align-content: start;
+      }
+
+      .project-layout__right {
+        height: 100%;
+      }
+
+      .project-layout__actions {
+        margin-top: auto;
+      }
+
+      @media (max-width: 980px) {
+        .project-layout {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .carousel {
+        margin-top: 0.9rem;
+      }
+
+      .carousel__viewer {
+        position: relative;
+        overflow: hidden;
+        border-radius: var(--radius-md);
+        border: 1px solid var(--border-subtle);
+        background: rgba(255, 255, 255, 0.03);
+        box-shadow: var(--shadow-soft);
+        display: grid;
+        place-items: center;
+        padding: 0.5rem;
+      }
+
+      .carousel__img {
+        width: 100%;
+        max-height: 70vh;
+        object-fit: contain;
+        background: rgba(0, 0, 0, 0.18);
+      }
+
+      .carousel__controls {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 0.85rem;
+        gap: 0.75rem;
+      }
+
+      .carousel__arrow {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: 1px solid var(--border-subtle);
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--text);
+        font-size: 1.1rem;
+        cursor: pointer;
+      }
+
+      .carousel__meta {
+        margin: 0;
+        color: var(--text-muted);
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="section">
+      <div class="section__inner">
+        <section class="project-section" aria-label="Momentum sectie 1">
+          <div class="project-layout">
+            <div class="project-layout__left">
+              <p class="section__eyebrow">Project case</p>
+              <h1 class="section__title">Momentum</h1>
+              <p class="section__subtitle">
+                Fitness & nutrition app concept with workout, nutrition, dashboard and onboarding flows.
+              </p>
+
+              <article class="card glass-card">
+                <h2 class="card__title">Project context</h2>
+                <p class="card__text">
+                  Momentum is a mobile-first fitness and nutrition app concept. The app is designed to help users 
+                  track their workouts and nutrition, and to provide them with a dashboard and onboarding 
+                  flow to help them get started.                
+                </p>
+              </article>
+
+              <article class="card glass-card">
+                <h2 class="card__title">Design Process</h2>
+                <p class="card__text">
+                  I followed an iterative design process starting with user research to understand beginner 
+                  needs and pain points, translating these insights into low- and high-fidelity designs, 
+                  and continuously validating decisions through usability testing and feedback to refine the app’s 
+                  simplicity, clarity, and effectiveness.
+                </p>
+              </article>
+            </div>
+
+            <div class="project-layout__right">
+              <article class="card glass-card">
+                <h2 class="card__title">Main App</h2>
+                <div class="carousel" data-carousel="main">
+                  <div class="carousel__viewer">
+                    <img class="carousel__img" id="main-image" src="" alt="Momentum app scherm" />
+                  </div>
+                  <div class="carousel__controls">
+                    <button class="carousel__arrow" id="main-prev" type="button" aria-label="Vorige scherm">
+                      ←
+                    </button>
+                    <p class="carousel__meta" id="main-meta">1 / 9</p>
+                    <button class="carousel__arrow" id="main-next" type="button" aria-label="Volgende scherm">
+                      →
+                    </button>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="project-section" aria-label="Momentum sectie 2">
+          <div class="project-layout">
+            <div class="project-layout__left">
+              <article class="card glass-card">
+                <h2 class="card__title">Onboarding</h2>
+                <div class="carousel" data-carousel="onboarding">
+                  <div class="carousel__viewer">
+                    <img class="carousel__img" id="onboarding-image" src="" alt="Momentum onboarding scherm" />
+                  </div>
+                  <div class="carousel__controls">
+                    <button class="carousel__arrow" id="onboarding-prev" type="button" aria-label="Vorig onboarding scherm">
+                      ←
+                    </button>
+                    <p class="carousel__meta" id="onboarding-meta">1 / 5</p>
+                    <button class="carousel__arrow" id="onboarding-next" type="button" aria-label="Volgend onboarding scherm">
+                      →
+                    </button>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="project-layout__right">
+              <article class="card glass-card">
+                <h2 class="card__title">Onboarding context</h2>
+                <p class="card__text">
+                  The onboarding flow translates user data directly into a personalized plan. By building the process 
+                  into clear steps, the input remains easy and the start of the app feels immediately relevant.
+                </p>
+              </article>
+
+              <article class="card glass-card">
+                <h2 class="card__title">Design Process</h2>
+                <p class="card__text">
+                  The onboarding process is designed to quickly personalize the experience by guiding users through 
+                  a few simple steps where they define their goals, preferences, and training habits. 
+                  The inputs in this flow are directly based on key pain points and insights from user research, 
+                  such as lack of structure, uncertainty about where to start, and difficulty staying consistent. 
+                  By addressing these issues upfront, the app is able to generate a tailored plan that lowers the 
+                  barrier to entry and provides immediate clarity and direction.
+                </p>
+              </article>
+
+              <div class="hero__actions project-layout__actions" style="justify-content: flex-end">
+                <a class="btn btn--ghost" href="index.html#projects">Back to Projects</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script>
+      (function () {
+        var mainScreens = [
+          "img/Momentum Images/Momentum Today.png",
+          "img/Momentum Images/Momentum Workout.png",
+          "img/Momentum Images/Momentum Workout Active.png",
+          "img/Momentum Images/Momentum Workout Active Add Set.png",
+          "img/Momentum Images/Momentum Nutrition.png",
+          "img/Momentum Images/Momentum Nutrition Scan.png",
+          "img/Momentum Images/Momentum Nutrition Search.png",
+          "img/Momentum Images/Momentum Dashboard.png",        
+          "img/Momentum Images/Momentum Profile.png",        
+        ];
+
+        var onboardingScreens = [
+          "img/Momentum Images/Momentum Onboarding 1.1 v2.png",
+          "img/Momentum Images/Momentum Onboarding 1.2 v2.png",
+          "img/Momentum Images/Momentum Onboarding 2 v2.png",
+          "img/Momentum Images/Momentum Onboarding 3 v2.png",
+          "img/Momentum Images/Momentum Onboarding 4 v2.png"
+        ];
+
+        function initCarousel(config) {
+          var index = 0;
+          var items = config.items;
+          var imageEl = document.getElementById(config.imageId);
+          var metaEl = document.getElementById(config.metaId);
+          var prevBtn = document.getElementById(config.prevId);
+          var nextBtn = document.getElementById(config.nextId);
+
+          function render() {
+            imageEl.src = items[index];
+            imageEl.alt = config.altPrefix + " " + (index + 1);
+            metaEl.textContent = String(index + 1) + " / " + String(items.length);
+          }
+
+          prevBtn.addEventListener("click", function () {
+            index = (index - 1 + items.length) % items.length;
+            render();
+          });
+
+          nextBtn.addEventListener("click", function () {
+            index = (index + 1) % items.length;
+            render();
+          });
+
+          render();
+        }
+
+        initCarousel({
+          items: mainScreens,
+          imageId: "main-image",
+          metaId: "main-meta",
+          prevId: "main-prev",
+          nextId: "main-next",
+          altPrefix: "Momentum app scherm"
+        });
+
+        initCarousel({
+          items: onboardingScreens,
+          imageId: "onboarding-image",
+          metaId: "onboarding-meta",
+          prevId: "onboarding-prev",
+          nextId: "onboarding-next",
+          altPrefix: "Momentum onboarding scherm"
+        });
+      })();
+    </script>
+  </body>
+</html>

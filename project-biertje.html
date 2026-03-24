@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Project detailpagina van Biertje app met dark/light design carousel."
+    />
+    <title>Project — Biertje App</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .project-layout {
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        gap: 1rem;
+        align-items: start;
+      }
+
+      .project-layout__left,
+      .project-layout__right {
+        display: grid;
+        gap: 1rem;
+      }
+
+      @media (max-width: 980px) {
+        .project-layout {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .mode-switch {
+        display: inline-flex;
+        gap: 0.4rem;
+        padding: 0.35rem;
+        border-radius: 999px;
+        border: 1px solid var(--border-subtle);
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .mode-switch__btn {
+        border: 1px solid transparent;
+        border-radius: 999px;
+        padding: 0.45rem 0.9rem;
+        background: transparent;
+        color: var(--text-muted);
+        font: inherit;
+        cursor: pointer;
+      }
+
+      .mode-switch__btn.is-active {
+        background: rgba(167, 139, 250, 0.2);
+        border-color: rgba(255, 255, 255, 0.12);
+        color: var(--text);
+      }
+
+      .carousel {
+        margin-top: 1.25rem;
+      }
+
+      .carousel__viewer {
+        position: relative;
+        overflow: hidden;
+        border-radius: var(--radius-md);
+        border: 1px solid var(--border-subtle);
+        background: rgba(255, 255, 255, 0.03);
+        box-shadow: var(--shadow-soft);
+      }
+
+      .carousel__img {
+        width: 100%;
+        max-height: 70vh;
+        object-fit: contain;
+        background: rgba(0, 0, 0, 0.18);
+      }
+
+      .carousel__controls {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 0.85rem;
+        gap: 0.75rem;
+      }
+
+      .carousel__arrow {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: 1px solid var(--border-subtle);
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--text);
+        font-size: 1.1rem;
+        cursor: pointer;
+      }
+
+      .carousel__meta {
+        margin: 0;
+        color: var(--text-muted);
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="section">
+      <div class="section__inner">
+        <p class="section__eyebrow">Project case</p>
+        <h1 class="section__title">Biertje</h1>
+        <p class="section__subtitle">
+          Een sociale app-concept met friends, games en recap schermen. Use the toggle to switch between dark and light 
+          designs and scroll through the screens with the arrows.
+        </p>
+
+        <div class="project-layout">
+          <div class="project-layout__left">
+            <article class="card glass-card">
+              <h2 class="card__title">Project context</h2>
+              <p class="card__text">
+                Biertje is a social app concept for a night out with friends, games and recap screens.
+              </p>
+            </article>
+
+            <article class="card glass-card">
+              <h2 class="card__title">Design Process</h2>
+              <p class="card__text">
+                Through the use of user validation and user testing, I was able to create a strong app concept through
+                several iterations. The final design is ready for development. I plan to pick this project back up 
+                in the future when I have more time and resources.              
+              </p>
+            </article>
+
+            <div class="hero__actions" style="justify-content: flex-start">
+              <a class="btn btn--ghost" href="index.html#projects">Back to Projects</a>
+            </div>
+          </div>
+
+          <div class="project-layout__right">
+            <article class="card glass-card">
+              <h2 class="card__title">Designs</h2>
+
+              <div class="mode-switch" role="group" aria-label="Design mode selectie">
+                <button class="mode-switch__btn is-active" type="button" data-mode-btn="dark">Dark</button>
+                <button class="mode-switch__btn" type="button" data-mode-btn="light">Light</button>
+              </div>
+
+              <div class="carousel">
+                <div class="carousel__viewer">
+                  <img class="carousel__img" id="carousel-image" src="" alt="Biertje app scherm" />
+                </div>
+                <div class="carousel__controls">
+                  <button class="carousel__arrow" id="carousel-prev" type="button" aria-label="Vorige scherm">
+                    ←
+                  </button>
+                  <p class="carousel__meta" id="carousel-meta">1 / 4</p>
+                  <button class="carousel__arrow" id="carousel-next" type="button" aria-label="Volgende scherm">
+                    →
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      (function () {
+        var screens = {
+          dark: [
+            "img/Biertje Images/MVP Home Dark.png",
+            "img/Biertje Images/MVP Games Dark.png",
+            "img/Biertje Images/MVP Social Dark.png",
+            "img/Biertje Images/MVP Statistics Dark.png"
+          ],
+          light: [
+            "img/Biertje Images/MVP Home Light.png",
+            "img/Biertje Images/MVP Games Light.png",
+            "img/Biertje Images/MVP Social Light.png",
+            "img/Biertje Images/MVP Statistics Light.png"
+          ]
+        };
+
+        var mode = "dark";
+        var index = 0;
+        var imageEl = document.getElementById("carousel-image");
+        var metaEl = document.getElementById("carousel-meta");
+        var prevBtn = document.getElementById("carousel-prev");
+        var nextBtn = document.getElementById("carousel-next");
+        var modeBtns = document.querySelectorAll("[data-mode-btn]");
+
+        function render() {
+          var items = screens[mode];
+          var current = items[index];
+          imageEl.src = current;
+          imageEl.alt = "Biertje app " + mode + " scherm " + (index + 1);
+          metaEl.textContent = String(index + 1) + " / " + String(items.length);
+        }
+
+        function setMode(nextMode) {
+          mode = nextMode;
+          index = 0;
+          modeBtns.forEach(function (btn) {
+            btn.classList.toggle("is-active", btn.getAttribute("data-mode-btn") === mode);
+          });
+          render();
+        }
+
+        prevBtn.addEventListener("click", function () {
+          var items = screens[mode];
+          index = (index - 1 + items.length) % items.length;
+          render();
+        });
+
+        nextBtn.addEventListener("click", function () {
+          var items = screens[mode];
+          index = (index + 1) % items.length;
+          render();
+        });
+
+        modeBtns.forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            setMode(btn.getAttribute("data-mode-btn"));
+          });
+        });
+
+        render();
+      })();
+    </script>
+  </body>
+</html>
