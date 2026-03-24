@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400&display=swap");
+
 /* =============================================================================
    Portfolio — dark luxury, selective glass
    ============================================================================= */
@@ -19,8 +21,8 @@
   --radius-sm: 10px;
   --radius-md: 16px;
   --radius-lg: 24px;
-  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-display: "Georgia", "Times New Roman", serif;
+  --font-sans: "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Bebas Neue", "Arial Narrow", Arial, sans-serif;
   --header-h: 72px;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -47,6 +49,7 @@ body {
   margin: 0;
   min-height: 100vh;
   font-family: var(--font-sans);
+  font-weight: 400;
   font-size: 1rem;
   line-height: 1.6;
   color: var(--text);
@@ -227,9 +230,9 @@ a:hover {
 
 .logo {
   font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.15rem;
-  letter-spacing: 0.04em;
+  font-weight: 400;
+  font-size: 1.45rem;
+  letter-spacing: 0.06em;
   text-decoration: none;
   color: var(--text);
   background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
@@ -265,7 +268,7 @@ a:hover {
 .site-nav a {
   text-decoration: none;
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--text-muted);
   padding: 0.35rem 0;
   position: relative;
@@ -449,7 +452,7 @@ a:hover {
 
 .hero__title {
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 400;
   font-size: clamp(2.25rem, 5vw, 3.5rem);
   line-height: 1.12;
   letter-spacing: -0.02em;
@@ -528,7 +531,7 @@ a:hover {
   padding: 0.75rem 1.35rem;
   font-family: inherit;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 400;
   text-decoration: none;
   border-radius: 999px;
   cursor: pointer;
@@ -585,7 +588,7 @@ a:hover {
 
 .section__eyebrow {
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--accent-strong);
@@ -595,7 +598,7 @@ a:hover {
 .section__title {
   font-family: var(--font-display);
   font-size: clamp(1.75rem, 3vw, 2.25rem);
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: -0.02em;
   margin: 0 0 0.75rem;
 }
@@ -624,8 +627,9 @@ a:hover {
 }
 
 .card__title {
+  font-family: var(--font-display);
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 400;
   margin: 0 0 0.65rem;
   color: var(--gold);
 }
@@ -652,6 +656,9 @@ a:hover {
   gap: 0;
   overflow: hidden;
   padding: 0;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 @media (max-width: 700px) {
@@ -663,12 +670,20 @@ a:hover {
 .project-card__media {
   min-height: 140px;
   position: relative;
+  overflow: hidden;
 }
 
 .project-card__gradient {
   position: absolute;
   inset: 0;
   display: block;
+}
+
+.project-card__image {
+  width: 100%;
+  height: 100%;
+  min-height: 140px;
+  object-fit: cover;
 }
 
 .project-card__gradient--a {
@@ -694,8 +709,9 @@ a:hover {
 }
 
 .project-card__title {
+  font-family: var(--font-display);
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 400;
   margin: 0 0 0.5rem;
 }
 
@@ -728,7 +744,7 @@ a:hover {
 
 .project-card__link {
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 400;
   text-decoration: none;
   color: var(--accent);
   display: inline-flex;
@@ -774,7 +790,7 @@ a:hover {
 
 .skill-pill__name {
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .skill-pill__meter {
@@ -810,7 +826,7 @@ a:hover {
 .contact__email {
   margin: 0 0 1.5rem;
   font-size: clamp(1.1rem, 2.5vw, 1.35rem);
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .contact__email a {
